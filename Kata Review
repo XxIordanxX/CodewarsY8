@@ -1,0 +1,15 @@
+Complete the function that calculates the area of the red square, when the length of the circular arc A is given as the input. Return the result rounded to two decimals.
+
+
+
+public class Geometry {
+  public static double squareArea(double a) {
+    double radius = 2.0 * a / Math.PI;
+    return roundToTwo(radius * radius);
+  }
+  
+  private static double roundToTwo(double d) {
+    int i = (int)(d * 100);
+    return i / 100.0;
+  }
+}
