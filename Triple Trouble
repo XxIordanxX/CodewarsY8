@@ -1,0 +1,13 @@
+Details: Create a function that will return a string that combines all of the letters of the three inputed strings in groups. 
+Taking the first letter of all of the inputs and grouping them next to each other. Do this for every letter, see example below!
+
+Solutions:
+public class Kata {
+  public static String tripleTrouble(String one, String two, String three) {
+    int len = one.length() * 3;
+    char[] chars = new char[len];
+    for (int i = 0; i < len; i++)
+      chars[i] = (i % 3 == 0 ? one : i % 3 == 1 ? two : three).charAt(i / 3);
+    return String.valueOf(chars);
+  }
+}
