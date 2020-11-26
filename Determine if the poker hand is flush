@@ -1,0 +1,20 @@
+Details: Determine if the poker hand is flush, meaning if the five cards are of the same suit.
+Your function will be passed a list/array of 5 strings, each representing a poker card in the format "5H" (5 of hearts), 
+meaning the value of the card followed by the initial of its suit (Hearts, Spades, Diamonds or Clubs). No jokers included.
+Your function should return true if the hand is a flush, false otherwise.
+The possible card values are 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
+
+
+Solutions:
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Kata{
+  public static boolean CheckIfFlush(String[] cards){
+    List<String> suits = new ArrayList<String>();
+    Arrays.stream(cards).forEach(x -> suits.add(x.substring(x.length() - 1)));
+    long fred  = suits.stream().distinct().count();
+    return fred == 1; 
+  }
+}
